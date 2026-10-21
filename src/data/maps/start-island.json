@@ -1,0 +1,21 @@
+{
+  "name": "Startinsel",
+  "width": 14,
+  "depth": 14,
+  "tiles": [
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null],
+    [null,null,null,null,null,{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},null,null,null,null,null],
+    [null,null,null,{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},null,null,null],
+    [null,null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null,null],
+    [null,null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass","object":"tree"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null,null],
+    [null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass","object":"tree"},{"height":2,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null],
+    [null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"stone","object":"rock"},{"height":3,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null],
+    [null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass","object":"tree"},{"height":2,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null],
+    [null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass","object":"tree"},{"height":3,"type":"grass"},{"height":3,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},null],
+    [null,null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass","object":"tree"},{"height":2,"type":"grass"},{"height":1,"type":"water"},{"height":1,"type":"sand"},null,null],
+    [null,null,{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":2,"type":"grass"},{"height":1,"type":"water"},{"height":1,"type":"water"},{"height":1,"type":"sand"},null,null],
+    [null,null,null,{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"grass"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},null,null,null],
+    [null,null,null,null,null,{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},{"height":1,"type":"sand"},null,null,null,null,null],
+    [null,null,null,null,null,null,null,null,null,null,null,null,null,null]
+  ]
+}
