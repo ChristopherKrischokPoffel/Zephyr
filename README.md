@@ -4,7 +4,7 @@ A 3D browser RPG with a party, set on floating islands.
 
 Skills get better the more you use them, and they unlock new combat techniques. Combat is turn-based and happens right in the world, and you travel by riding magical winds.
 
-🌬️ **Play online:** https://christopherkrischokpoffel.github.io/Zephyr/
+🌬️ **Play online:** [https://christopherkrischokpoffel.github.io/Zephyr/](https://poffel5657.github.io/Zephyr/)
 
 > 🚧 Zephyr is at a very early stage. The basic setup is done, and a playable prototype is the next goal.
 
