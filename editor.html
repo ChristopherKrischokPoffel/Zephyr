@@ -4,86 +4,114 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zephyr Map-Editor</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lexend:wght@400;500;600&display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Lexend:wght@400;500;600&display=swap"
+    />
   </head>
   <body>
-<header class="top">
-  <div>
-    <h1>Zephyr Map-Editor</h1>
-    <p class="sub">Draufsicht · 1 Feld = 1 Meter · Zahl im Feld = Höhenstufe</p>
-  </div>
-  <label class="field" for="map-name">Name der Insel
-    <input id="map-name" type="text" autocomplete="off">
-  </label>
-</header>
-
-<main class="layout">
-  <aside class="panel tools">
-    <section>
-      <h2>Werkzeug</h2>
-      <div class="seg" id="tool-buttons"></div>
-    </section>
-
-    <section id="type-section">
-      <h2>Boden</h2>
-      <div class="swatches" id="type-buttons"></div>
-    </section>
-
-    <section id="object-section" hidden>
-      <h2>Objekt</h2>
-      <div class="seg" id="object-buttons"></div>
-    </section>
-
-    <section>
-      <h2>Karte</h2>
-      <div class="size-row">
-        <label class="field" for="map-width">Breite (x)
-          <input id="map-width" type="number" min="4" max="64" inputmode="numeric">
-        </label>
-        <label class="field" for="map-depth">Tiefe (z)
-          <input id="map-depth" type="number" min="4" max="64" inputmode="numeric">
-        </label>
-        <button type="button" id="apply-size">Übernehmen</button>
+    <header class="top">
+      <div>
+        <h1>Zephyr Map-Editor</h1>
+        <p class="sub">
+          Draufsicht · 1 Feld = 1 Meter · Zahl im Feld = Höhenstufe
+        </p>
       </div>
-      <label class="check" for="show-heights">
-        <input id="show-heights" type="checkbox"> Höhen anzeigen
+      <label class="field" for="map-name"
+        >Name der Insel
+        <input id="map-name" type="text" autocomplete="off" />
       </label>
-    </section>
+    </header>
 
-    <section>
-      <div class="row">
-        <button type="button" id="undo">Rückgängig</button>
-        <button type="button" id="sample">Beispielinsel</button>
-        <button type="button" id="clear">Alles leeren</button>
-      </div>
-    </section>
-  </aside>
+    <main class="layout">
+      <aside class="panel tools">
+        <section>
+          <h2>Werkzeug</h2>
+          <div class="seg" id="tool-buttons"></div>
+        </section>
 
-  <section class="stage">
-    <div class="canvas-wrap" id="canvas-wrap">
-      <canvas id="map-canvas" aria-label="Karte"></canvas>
-    </div>
-    <p class="hover" id="hover-info">&nbsp;</p>
-    <p class="status" id="status"></p>
-  </section>
+        <section id="type-section">
+          <h2>Boden</h2>
+          <div class="swatches" id="type-buttons"></div>
+        </section>
 
-  <section class="panel export">
-    <h2>JSON</h2>
-    <p class="hint">So sieht die Karte als Datei aus. Fürs Spiel kommt sie nach <code>src/data/maps/</code>.</p>
-    <textarea id="json-text" spellcheck="false" aria-label="Karte als JSON"></textarea>
-    <div class="row">
-      <button type="button" class="primary" id="copy">JSON kopieren</button>
-      <button type="button" id="download">Als Datei speichern</button>
-      <label class="file-button" for="open-file">Datei öffnen
-        <input id="open-file" type="file" accept=".json,application/json">
-      </label>
-      <button type="button" id="load-text">Aus Textfeld laden</button>
-    </div>
-    <p class="message" id="message" role="status"></p>
-  </section>
-</main>
+        <section id="object-section" hidden>
+          <h2>Objekt</h2>
+          <div class="seg" id="object-buttons"></div>
+        </section>
+
+        <section>
+          <h2>Karte</h2>
+          <div class="size-row">
+            <label class="field" for="map-width"
+              >Breite (x)
+              <input
+                id="map-width"
+                type="number"
+                min="4"
+                max="64"
+                inputmode="numeric"
+              />
+            </label>
+            <label class="field" for="map-depth"
+              >Tiefe (z)
+              <input
+                id="map-depth"
+                type="number"
+                min="4"
+                max="64"
+                inputmode="numeric"
+              />
+            </label>
+            <button type="button" id="apply-size">Übernehmen</button>
+          </div>
+          <label class="check" for="show-heights">
+            <input id="show-heights" type="checkbox" /> Höhen anzeigen
+          </label>
+        </section>
+
+        <section>
+          <div class="row">
+            <button type="button" id="undo">Rückgängig</button>
+            <button type="button" id="sample">Beispielinsel</button>
+            <button type="button" id="clear">Alles leeren</button>
+          </div>
+        </section>
+      </aside>
+
+      <section class="stage">
+        <div class="canvas-wrap" id="canvas-wrap">
+          <canvas id="map-canvas" aria-label="Karte"></canvas>
+        </div>
+        <p class="hover" id="hover-info">&nbsp;</p>
+        <p class="status" id="status"></p>
+      </section>
+
+      <section class="panel export">
+        <h2>JSON</h2>
+        <p class="hint">
+          So sieht die Karte als Datei aus. Fürs Spiel kommt sie nach
+          <code>src/data/maps/</code>.
+        </p>
+        <textarea
+          id="json-text"
+          spellcheck="false"
+          aria-label="Karte als JSON"
+        ></textarea>
+        <div class="row">
+          <button type="button" class="primary" id="copy">JSON kopieren</button>
+          <button type="button" id="download">Als Datei speichern</button>
+          <label class="file-button" for="open-file"
+            >Datei öffnen
+            <input id="open-file" type="file" accept=".json,application/json" />
+          </label>
+          <button type="button" id="load-text">Aus Textfeld laden</button>
+        </div>
+        <p class="message" id="message" role="status"></p>
+      </section>
+    </main>
 
     <script type="module" src="/src/editor/editor.js"></script>
   </body>

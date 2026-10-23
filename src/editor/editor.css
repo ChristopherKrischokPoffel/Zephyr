@@ -12,7 +12,8 @@
   --grid: rgba(27, 40, 51, 0.13);
   --danger: #b0412d;
   --font-ui: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-mono:
+    "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,9 +48,13 @@
   color-scheme: dark;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-[hidden] { display: none !important; }
+[hidden] {
+  display: none !important;
+}
 
 body {
   margin: 0;
@@ -63,7 +68,11 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
 }
 
-h1, h2 { margin: 0; text-wrap: balance; }
+h1,
+h2 {
+  margin: 0;
+  text-wrap: balance;
+}
 
 .top {
   display: flex;
@@ -95,7 +104,9 @@ h1, h2 { margin: 0; text-wrap: balance; }
   color: var(--muted);
 }
 
-input[type="text"], input[type="number"], textarea {
+input[type="text"],
+input[type="number"],
+textarea {
   font: inherit;
   color: var(--fg);
   background: var(--bg);
@@ -105,8 +116,14 @@ input[type="text"], input[type="number"], textarea {
   min-width: 0;
 }
 
-input[type="text"] { width: 220px; max-width: 100%; }
-input[type="number"] { width: 72px; font-family: var(--font-mono); }
+input[type="text"] {
+  width: 220px;
+  max-width: 100%;
+}
+input[type="number"] {
+  width: 72px;
+  font-family: var(--font-mono);
+}
 
 .layout {
   display: grid;
@@ -127,11 +144,33 @@ input[type="number"] { width: 72px; font-family: var(--font-mono); }
   min-width: 0;
 }
 
-.tools { grid-area: tools; display: flex; flex-direction: column; gap: 18px; align-self: start; }
-.stage { grid-area: stage; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
-.export { grid-area: export; display: flex; flex-direction: column; gap: 10px; }
+.tools {
+  grid-area: tools;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-self: start;
+}
+.stage {
+  grid-area: stage;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.export {
+  grid-area: export;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-.tools section, .export { display: flex; flex-direction: column; gap: 8px; }
+.tools section,
+.export {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 h2 {
   font-size: 11px;
@@ -141,7 +180,8 @@ h2 {
   color: var(--muted);
 }
 
-button, .file-button {
+button,
+.file-button {
   font: inherit;
   font-size: 13px;
   color: var(--fg);
@@ -155,9 +195,19 @@ button, .file-button {
   gap: 6px;
 }
 
-button:hover, .file-button:hover { border-color: var(--accent); }
-button:disabled { opacity: 0.45; cursor: default; border-color: var(--line); }
-button:focus-visible, .file-button:focus-within, input:focus-visible, textarea:focus-visible {
+button:hover,
+.file-button:hover {
+  border-color: var(--accent);
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  border-color: var(--line);
+}
+button:focus-visible,
+.file-button:focus-within,
+input:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
@@ -180,7 +230,9 @@ button.danger-armed {
   color: #fff;
 }
 
-.seg, .swatches, .row {
+.seg,
+.swatches,
+.row {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -225,16 +277,24 @@ canvas {
   cursor: crosshair;
 }
 
-.status, .hover {
+.status,
+.hover {
   margin: 0;
   font-size: 12px;
   color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 
-.hover { font-family: var(--font-mono); min-height: 1.45em; }
+.hover {
+  font-family: var(--font-mono);
+  min-height: 1.45em;
+}
 
-.hint { margin: 0; font-size: 13px; color: var(--muted); }
+.hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
 
 code {
   font-family: var(--font-mono);
@@ -255,16 +315,32 @@ textarea {
   overflow: auto;
 }
 
-.message { margin: 0; font-size: 13px; min-height: 1.45em; }
-.message.error { color: var(--danger); }
+.message {
+  margin: 0;
+  font-size: 13px;
+  min-height: 1.45em;
+}
+.message.error {
+  color: var(--danger);
+}
 
-.file-button input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
-.file-button { position: relative; }
+.file-button input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.file-button {
+  position: relative;
+}
 
 @media (max-width: 720px) {
   .layout {
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas: "tools" "stage" "export";
   }
-  .tools { gap: 14px; }
+  .tools {
+    gap: 14px;
+  }
 }
