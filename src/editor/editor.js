@@ -1,4 +1,5 @@
 import "./editor.css";
+import TILE_TYPES from "../data/tileTypes.json";
 
 /*
   Zephyr Map-Editor
@@ -14,13 +15,8 @@ import "./editor.css";
 
 // ---------- Einstellungen ----------
 
-const TYPES = {
-  grass: { label: "Gras", color: "#6aa84f" },
-  dirt: { label: "Erde", color: "#9c7148" },
-  stone: { label: "Stein", color: "#8a9097" },
-  sand: { label: "Sand", color: "#d8c286" },
-  water: { label: "Wasser", color: "#4a8fc6" },
-};
+// Bodentypen kommen aus einer gemeinsamen Datei, die auch das Spiel benutzt
+const TYPES = TILE_TYPES;
 
 const OBJECTS = {
   tree: "Baum",

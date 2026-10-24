@@ -1,9 +1,10 @@
+// Startpunkt: steckt alle Module zusammen und startet den Spiel-Loop.
 import { addUpdate, startLoop } from "./core/loop.js";
-import { renderWorld, updateWorld } from "./world/scene.js";
-import "./core/input.js";
+import { renderWorld } from "./world/scene.js";
+import { updateCamera } from "./world/camera.js";
 import "./style.css";
 
-addUpdate(updateWorld);
+addUpdate(updateCamera);
 addUpdate(renderWorld);
 
 startLoop();

@@ -1,46 +1,29 @@
+// Baut die 3D-Welt zusammen: Renderer, Licht, Insel und Kamera.
 import * as THREE from "three";
-import { on } from "../core/eventBus.js";
+import islandData from "../data/maps/start-island.json";
+import { loadGrid } from "./grid.js";
+import { buildIsland } from "./island.js";
+import { setupLighting } from "./lighting.js";
+import { camera, setupCamera, resizeCamera } from "./camera.js";
 
 export const scene = new THREE.Scene();
-export const camera = new THREE.PerspectiveCamera(
-  75,
-  window.innerWidth / window.innerHeight,
-  0.1,
-  1000,
-);
-camera.position.z = 5;
-
 export const renderer = new THREE.WebGLRenderer();
+renderer.shadowMap.enabled = true;
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshStandardMaterial({ color: 0xff6600 });
-export const cube = new THREE.Mesh(geometry, material);
-scene.add(cube);
+loadGrid(islandData);
+setupLighting(scene);
+buildIsland(scene);
+setupCamera(renderer.domElement);
 
-const light = new THREE.DirectionalLight(0xffffff, 3);
-light.position.set(2, 3, 4);
-scene.add(light);
-
-const ambient = new THREE.AmbientLight(0xffffff, 0.5);
-scene.add(ambient);
-
-export function updateWorld(deltaTime) {
-  cube.rotation.x += deltaTime;
-  cube.rotation.y += deltaTime;
-}
-
-export function renderWorld(deltaTime) {
+// Zeichnet ein Bild der Szene aus Sicht der Kamera.
+export function renderWorld() {
   renderer.render(scene, camera);
 }
 
-on("spacePressed", (data) => {
-  cube.material.color.set(Math.random() * 0xffffff);
-});
-
+// Passt Kamera und Zeichenfläche an, wenn sich die Fenstergröße ändert.
 addEventListener("resize", () => {
-  camera.aspect = window.innerWidth / window.innerHeight; // neues Seitenverhältnis
-  camera.updateProjectionMatrix(); // Kamera rechnet neu
-  renderer.setSize(window.innerWidth, window.innerHeight); // Zeichenfläche anpassen
+  resizeCamera();
+  renderer.setSize(window.innerWidth, window.innerHeight);
 });
