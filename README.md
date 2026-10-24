@@ -44,7 +44,7 @@ The left mouse button is kept free for walking (coming in Phase 3).
 |---|---|---|
 | 0 | Project setup: Vite, Three.js, GitHub Pages | ✅ |
 | 1 | Game loop and event bus | ✅ |
-| 2 | Grid and 3D island: map from JSON, light, camera | 🔨 almost done | ✅ |
+| 2 | Grid and 3D island: map from JSON, light, camera | ✅ |
 | 3 | Player and click-to-walk (raycasting + A*) | |
 | 4 | Inventory | |
 | 5 | Skill system + Woodcutting | |
